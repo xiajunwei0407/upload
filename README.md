@@ -21,8 +21,10 @@ $config = [
            'isCover'        => false, // 是否覆盖同名文件；非必传，默认false，有同名文件时抛出异常
       ];
 $upload = new Xjw\Upload\Upload($config);
-$result = $upload->upload();
+$result = $upload->upload(); // 上传结果
 //var_dump($result);
+$r = $upload->getReturnData(); // 上传成功后返回的信息
+//var_dump($r);
 ```
     
 

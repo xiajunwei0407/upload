@@ -6,7 +6,7 @@
  * Date: 2019/4/29
  * Time: 9:37
  */
-namespace Xjw\Upload;
+namespace Xjw;
 
 
 class Upload
