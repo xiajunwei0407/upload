@@ -10,8 +10,9 @@
 
 ###### php部分的代码示例：
 ```php
+// 配置说明
 $config = [
-           'allowExt'       => ['mp3', 'mp4'], // 允许上传的文件类型;非必传,默认['mp3', 'mp4']
+           'allowExt'       => ['mp3', 'mp4'], // 允许上传的文件类型;非必传,默认['*']
            'allowSize'      => '2M', // 允许上传的文件大小;非必传，默认2M；可选单位B,K,M,G
            'uploadRoot'     => '../resources/uploads/', // 文件上传的根目录；必传,末尾带/
            'savePath'       => 'path/to/xxx/', // 文件保存的子目录；必传,开头不带/,末尾带/

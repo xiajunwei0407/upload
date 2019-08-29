@@ -14,7 +14,7 @@ class Upload
     // 上传的文件
     private $file;
     // 允许上传的文件类型
-    private $allowExt = ['mp3', 'mp4'];
+    private $allowExt = ['*'];
     // 允许上传的文件大小 "B", "K", M", or "G"
     private $allowSize = '2M';
     // 上传根目录
@@ -49,14 +49,14 @@ class Upload
      * UploadController constructor.
      * @param array $config 上传的相关配置
      * $config = [
-     *      'allowExt' => ['mp3', 'mp4'], // 允许上传的文件类型;非必传,默认['mp3', 'mp4']
-     *      'allowSize' => '2M', // 允许上传的文件大小;非必传，默认2M；可选单位B,K,M,G
-     *      'uploadRoot' => '../resources/uploads/', // 文件上传的根目录；必传,末尾带/
-     *      'savePath' => 'path/to/xxx/', // 文件保存的子目录；必传,开头不带/,末尾带/
-     *      'saveNameMode' => 'random', // 文件名生成模式；非必传，默认random，可选值random--随机,original--源文件名,custom--自定义，需指定saveName
-     *      'saveName' => 'test.mp4', // 保存的文件名；saveNameMode=custom时必传，其他情况不用传
-     *      'dayDir' => true, // 是否按 /年月/日 的形式生成目录；非必传，默认true
-     *      'isCover' => false, // 是否覆盖同名文件；非必传，默认false，有同名文件时抛出异常
+     *      'allowExt'      => ['mp3', 'mp4'], // 允许上传的文件类型;非必传,默认['*']
+     *      'allowSize'     => '2M', // 允许上传的文件大小;非必传，默认2M；可选单位B,K,M,G
+     *      'uploadRoot'    => '../resources/uploads/', // 文件上传的根目录；必传,末尾带/
+     *      'savePath'      => 'path/to/xxx/', // 文件保存的子目录；必传,开头不带/,末尾带/
+     *      'saveNameMode'  => 'random', // 文件名生成模式；非必传，默认random，可选值random--随机,original--源文件名,custom--自定义，需指定saveName
+     *      'saveName'      => 'test.mp4', // 保存的文件名；saveNameMode=custom时必传，其他情况不用传
+     *      'dayDir'        => true, // 是否按 /年月/日 的形式生成目录；非必传，默认true
+     *      'isCover'       => false, // 是否覆盖同名文件；非必传，默认false，有同名文件时抛出异常
      * ];
      *
      * 调用方式 $upload = new Upload($config[, $key]); $upload->upload();
@@ -247,7 +247,7 @@ class Upload
      */
     private function checkExt()
     {
-        if(in_array($this->ext, $this->allowExt)){
+        if(in_array('*', $this->allowExt) || in_array($this->ext, $this->allowExt)){
             return true;
         }
         throw new \Exception('上传的文件类型不合法，允许上传的类型：' . implode(',', $this->allowExt));
