@@ -1,14 +1,14 @@
-###文件上传类
-####使用方法
+### 文件上传类
+#### 使用方法
 
-######HTML部分的代码示例：
+###### HTML部分的代码示例：
 ```html
 <!--这里的name="file"，无特殊情况不用更改-->
 <!--如需更改，则实例化upload时传入第二个参数进行指定: $upload = new Xjw\Upload($config, 'your input name');-->
 <input type="file" name="file" value="上传文件">
 ```
 
-######php部分的代码示例：
+###### php部分的代码示例：
 ```php
 $config = [
            'allowExt' => ['mp3', 'mp4'], // 允许上传的文件类型;非必传,默认['mp3', 'mp4']
