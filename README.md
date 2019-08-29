@@ -20,7 +20,7 @@ $config = [
            'dayDir'         => true, // 是否按 /年月/日 的形式生成目录；非必传，默认true
            'isCover'        => false, // 是否覆盖同名文件；非必传，默认false，有同名文件时抛出异常
       ];
-$upload = new Xjw\Upload($config);
+$upload = new Xjw\Upload\Upload($config);
 $result = $upload->upload();
 //var_dump($result);
 ```
