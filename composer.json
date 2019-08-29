@@ -2,6 +2,12 @@
     "name": "xjw/upload",
     "description": "upload files",
     "type": "library",
+    "authors": [
+        {
+            "name": "xiajunwei",
+            "email": "317681472@qq.com"
+        }
+    ],
     "require": {
         "php": ">5.0"
     },
